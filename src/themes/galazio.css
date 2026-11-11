@@ -1,0 +1,92 @@
+/* Galazio theme: the design system from annmariekernen.com.
+   Galazio (γαλάζιο) is Greek for light or sky blue.
+
+   Light mode uses Galazio's own tokens, mapped onto shadcn's color roles
+   (the comments name the Galazio token). Dark mode is a first pass:
+   Galazio is a light-only system, so these values are new.
+
+   Every rule is scoped to [data-theme="galazio"], so it only applies
+   when <html> carries that attribute (set in index.html or by the theme
+   picker). Load it after default.css in src/index.css. */
+@import "@fontsource-variable/archivo";
+@import "@fontsource-variable/newsreader";
+
+[data-theme="galazio"] {
+    --theme-font-sans: 'Archivo Variable', system-ui, sans-serif;
+    /* Newsreader is Galazio's display serif; use it with font-heading */
+    --theme-font-heading: 'Newsreader Variable', Georgia, serif;
+    --theme-font-serif: 'Newsreader Variable', Georgia, serif;
+}
+
+[data-theme="galazio"] {
+    --background: #ffffff;                /* paper */
+    --foreground: #191b1d;                /* ink */
+    --card: #ffffff;                      /* paper */
+    --card-foreground: #191b1d;           /* ink */
+    --popover: #ffffff;                   /* paper */
+    --popover-foreground: #191b1d;        /* ink */
+    --primary: #0b6bd6;                   /* blue-deep (action) */
+    --primary-foreground: #fcfdfe;        /* bone (action-fg) */
+    --secondary: #dee9f6;                 /* blue-pale */
+    --secondary-foreground: #0854a9;      /* blue-deeper */
+    --muted: #dfe6f0;                     /* mist-pale */
+    --muted-foreground: #6b7076;          /* ink-faint (fg-3) */
+    --accent: #e8eafd;                    /* periwinkle-pale */
+    --accent-foreground: #191b1d;         /* ink */
+    --destructive: #cb4c21;               /* rust (warning) */
+    --border: #dcdfe4;                    /* rule */
+    /* input: ink-faint at 75%, the lightest field border that keeps
+       3:1 contrast (WCAG 1.4.11) */
+    --input: color-mix(in srgb, #6b7076 75%, #ffffff);
+    --ring: #4770eb;                      /* blue-bright (focus) */
+    --chart-1: #1e86ee;                   /* blue */
+    --chart-2: #16b37e;                   /* green */
+    --chart-3: #b9bee7;                   /* periwinkle */
+    --chart-4: #0854a9;                   /* blue-deeper */
+    --chart-5: #08815a;                   /* green-deep */
+    /* 8px: buttons and fields land at 6px (radius-md), cards at about 11px */
+    --radius: 0.5rem;
+    --sidebar: #fcfdfe;                   /* bone */
+    --sidebar-foreground: #191b1d;
+    --sidebar-primary: #0b6bd6;
+    --sidebar-primary-foreground: #fcfdfe;
+    --sidebar-accent: #e8eafd;
+    --sidebar-accent-foreground: #191b1d;
+    --sidebar-border: #dcdfe4;
+    --sidebar-ring: #4770eb;
+}
+
+[data-theme="galazio"].dark {
+    --background: #141618;
+    --foreground: #eceef1;
+    --card: #1b1e21;
+    --card-foreground: #eceef1;
+    --popover: #1b1e21;
+    --popover-foreground: #eceef1;
+    --primary: #6aaef5;
+    --primary-foreground: #141618;
+    --secondary: #1a2a3c;
+    --secondary-foreground: #eceef1;
+    --muted: #24282c;
+    --muted-foreground: #9da2a9;
+    --accent: #252a45;
+    --accent-foreground: #eceef1;
+    --destructive: #f08a68;
+    --border: #30353a;
+    /* Field borders keep 3:1 against the dark background */
+    --input: #687079;
+    --ring: #6aaef5;
+    --chart-1: #6aaef5;
+    --chart-2: #5fcf9f;
+    --chart-3: #b9bee7;
+    --chart-4: #3d8be0;
+    --chart-5: #2fa577;
+    --sidebar: #1b1e21;
+    --sidebar-foreground: #eceef1;
+    --sidebar-primary: #6aaef5;
+    --sidebar-primary-foreground: #141618;
+    --sidebar-accent: #252a45;
+    --sidebar-accent-foreground: #eceef1;
+    --sidebar-border: #30353a;
+    --sidebar-ring: #6aaef5;
+}
